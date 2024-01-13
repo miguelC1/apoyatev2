@@ -1,0 +1,7 @@
+{
+  "name": "apoyate2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
