@@ -1,20 +1,97 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-label>Home</ion-label>
+
+    <ion-buttons slot="end">
+      <ion-button class="notification">
+        <ion-icon name="logo-whatsapp" color="success"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="fondo">
+  <div>
+    <div>
+      <ion-card class="" *ngFor="let materia of materias">
+        <ion-card-content class="container">
+          <ion-label color="primary">{{materia}}</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <div class="container"><h2 color="red">Semestre A</h2></div>
+    
+      <div class="tarjeta">
+        <ion-grid>
+          <ion-row class="">
+            <ion-col class="textoTarjeta">
+              <a href=""(click)="ingresarCurso('Fisica I')">Ingles I</a><p></p>
+              <ion-label color="primary">Introduccion a la Programacion</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-label class="course-label" color="primary">Fisica I</ion-label><p></p>
+              <ion-label class="course-label" color="primary">Algebra I</ion-label><p></p>
+              <ion-label color="primary">Calculo I</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div> 
+
+      <div class="container"><h2>Semestre B</h2></div>
+    
+      <div class="tarjeta">
+        <ion-grid>
+          <ion-row class="">
+            <ion-col class="textoTarjeta">
+              <a href="">Ingles II</a><p></p>
+              <ion-label color="primary">Estructira y Elementos de Programacion</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-label class="course-label" color="primary">Fisica II</ion-label><p></p>
+              <ion-label class="course-label" color="primary">Algebra II</ion-label><p></p>
+              <ion-label color="primary">Calculo II</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div> 
   </div>
+
+  
+
+  <div>
+     
+    <div class="title ion-padding">
+      <h2 class="">Curso HTML y CSS</h2>
+    </div>
+    <div class="tarjeta">
+      <img src="https://www.shutterstock.com/image-vector/elearning-banner-online-education-home-260nw-1694176021.jpg" />
+    </div> 
+    
+    <div class="title ion-padding">
+      <h2 class="">Curso Redes</h2>
+    </div>
+    <div class="tarjeta">
+      <img src="https://cdn.euroinnova.edu.es/img/subidasEditor/informa-1604394163.webp" />
+    </div>
+
+    <div class="title ion-padding">
+      <h2 class="">Free Fire</h2>
+    </div>
+    <div class="tarjeta">
+      <img [src]="botonFreeFire" />
+    </div> 
+    
+    <div class="title ion-padding">
+      <h2 class="">Mobile Legends</h2>
+    </div>
+    <div class="tarjeta">
+      <img [src]="botonMobileLegends"/>
+    </div>
+  </div>
+
 </ion-content>

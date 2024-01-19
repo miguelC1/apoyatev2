@@ -1,0 +1,33 @@
+
+
+<ion-content>
+  <div class="container">
+    <h2>Hola</h2>
+    <h2>Miguel Corma</h2>
+  </div>
+  <div class="container">
+    <ion-card class="container">
+      <ion-select aria-label="Fruit" 
+                  interface="popover" 
+                  placeholder="Selecciona tu Carrera"
+                  (ionChange)="handleChange($event)"
+                  (ionCancel)="handleCancel()"
+                  (ionDismiss)="handleDismiss()">
+        <ion-select-option *ngFor="let item of foods" [value]="item" class="centered-text">{{ item.name }}</ion-select-option>
+      </ion-select>
+    </ion-card>
+
+    <ion-card class="container">
+      <ion-select aria-label="Fruit" 
+                  interface="popover" 
+                  placeholder="Selecciona tu Carrera"
+                  (ionChange)="handleChange($event)"
+                  (ionCancel)="handleCancel()"
+                  (ionDismiss)="handleDismiss()">
+        <ion-select-option *ngFor="let item of foods" [value]="item" class="centered-text">{{ item.name }}</ion-select-option>
+      </ion-select>
+    </ion-card>
+  </div>
+  
+  
+</ion-content>
