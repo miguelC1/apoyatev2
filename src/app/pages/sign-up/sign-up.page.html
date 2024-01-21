@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
+        <img src="../../assets/back-dark.svg" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Registrate</h1>
+    Es rápido y fácil
+    <div class="form-container">
+      <form [formGroup]="formularioDeRegistro" (ngSubmit)="registarUsuario()">
+        <ion-item>
+          <ion-label id="usuario" position="floating">Usuario</ion-label>
+          <ion-input labelledby="usuario" required formControlName="userName" type="text"></ion-input>
+          <ion-icon slot="end" name="help-circle-outline" (click)="informacionUsuario()"></ion-icon>
+        </ion-item>
+        <ion-item *ngIf="showPassword">
+          <ion-label id="password-label" position="floating">Contraseña</ion-label>
+          <ion-input labelledby="password-label" required formControlName="password" type="password"></ion-input>
+          <ion-icon name="eye" slot="end" (click)="togglePasswordText()"></ion-icon>
+        </ion-item>
+        <ion-item *ngIf="!showPassword">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input  required formControlName="password" type="text"></ion-input>
+          <ion-icon name="eye-off" slot="end" (click)="togglePasswordText()"></ion-icon>
+        </ion-item>
+
+        <ion-item *ngIf="showPasswordConfirm">
+          <ion-label id="password-label" position="floating">Confirmar Contraseña</ion-label>
+          <ion-input  labelledby="password-label" required formControlName="passwordConfirm" type="password"></ion-input>
+          <ion-icon name="eye" slot="end" (click)="togglePasswordConfirmText()"></ion-icon>
+        </ion-item>
+        <ion-item *ngIf="!showPasswordConfirm">
+          <ion-label id="password-lab" position="floating">Confirmar Contraseña</ion-label>
+          <ion-input  labelledby="password-lab" required formControlName="passwordConfirm" type="text"></ion-input>
+          <ion-icon name="eye-off" slot="end" (click)="togglePasswordConfirmText()"></ion-icon>
+        </ion-item>
+        <br>
+        <br>
+        <ion-item>
+          <ion-label position="floating">Nombres</ion-label>
+          <ion-input required formControlName="name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellidos</ion-label>
+          <ion-input required formControlName="lastName" type="text"></ion-input>
+        </ion-item>
+
+        
+        <ion-button expand="block" class="main-button" type="submit"
+          [disabled]="formularioDeRegistro.invalid || cargando">Registrar
+        </ion-button>
+        <ion-progress-bar *ngIf="cargando" type="indeterminate"></ion-progress-bar>
+      </form>
+
+
+
+      <div class="sign-up">
+        Ya tienes una cuenta? <ion-button color="dark" fill="clear" routerLink="/login" routerDirection="forward">
+          <ion-label color="primary">Ingresar</ion-label>
+        </ion-button>
+      </div>
+
+      <div class="sign-up">
+        <ion-label>Ayuda y soporte</ion-label>
+      </div>
+
+      <div class="sign-up">
+        <ion-button href={{url}} color="success"><ion-icon name="logo-whatsapp"></ion-icon>WhatsApp</ion-button>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

@@ -13,20 +13,23 @@
                   (ionChange)="handleChange($event)"
                   (ionCancel)="handleCancel()"
                   (ionDismiss)="handleDismiss()">
-        <ion-select-option *ngFor="let item of foods" [value]="item" class="centered-text">{{ item.name }}</ion-select-option>
+        <ion-select-option *ngFor="let item of facultades" [value]="item" class="centered-text">{{ item.name }}</ion-select-option>
       </ion-select>
     </ion-card>
 
-    <ion-card class="container">
+    <ion-card  *ngIf="verCarreras">
       <ion-select aria-label="Fruit" 
                   interface="popover" 
                   placeholder="Selecciona tu Carrera"
-                  (ionChange)="handleChange($event)"
+                  (ionChange)="goToHome()"
                   (ionCancel)="handleCancel()"
                   (ionDismiss)="handleDismiss()">
-        <ion-select-option *ngFor="let item of foods" [value]="item" class="centered-text">{{ item.name }}</ion-select-option>
+        <ion-select-option *ngFor="let item of carreras" [value]="item" class="centered-text">{{ item }}</ion-select-option>
       </ion-select>
     </ion-card>
+    <div *ngIf="mostrarBtn">
+      <ion-button [routerLink]="'/home'">ingresar</ion-button>
+    </div>
   </div>
   
   

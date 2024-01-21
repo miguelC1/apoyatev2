@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage implements OnInit {
-  foods = [
+  facultades = [
     {
       id: 1,
       name: 'Facultad de Ciencias y Tecnologias',
@@ -23,12 +23,16 @@ export class WelcomePage implements OnInit {
       type: 'dessert',
     },
   ];
+  carreras: string[]=["Ing. Sistemas", "Ing. Informatica","Ing. civil","Ing. Electromecanica"];
+  verCarreras:boolean=false;
+  mostrarBtn: boolean=false;
   constructor() { }
 
   ngOnInit() {
   }
 
   handleChange(e:any) {
+    this.verCarreras=true;
     console.log('ionChange fired with value: ' + e.detail.value);
   }
 
@@ -38,5 +42,8 @@ export class WelcomePage implements OnInit {
 
   handleDismiss() {
     console.log('ionDismiss fired');
+  }
+  goToHome(){
+    this.mostrarBtn=true;
   }
 }

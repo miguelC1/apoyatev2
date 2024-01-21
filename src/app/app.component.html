@@ -2,17 +2,20 @@
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Menu Content</ion-title>
+        <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content >
-      <!--ion-list>
-        <ion-item *ngFor="let c of componentes | async"
-                  [routerLink]="c.redirectTo"
+      <ion-list>
+        <ion-menu-toggle *ngFor="let c of componentes | async">
+        <ion-item [routerLink]="c.redirectTo"
                   detail>
-        <ion-item [name]="c.icon"></ion-item>
+                <ion-icon [name]="c.icon" slot="start"></ion-icon>
+        {{ c.name }}
         </ion-item>
-      </!--ion-list-->
+        </ion-menu-toggle>
+      </ion-list>
+    
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>

@@ -1,13 +1,13 @@
 [
     {
       "icon": "american-football",
-      "name": "Action Sheet",
-      "redirectTo": "/action-sheet"
+      "name": "profile",
+      "redirectTo": "/profile"
     },
     {
-      "icon": "appstore",
-      "name": "Alert",
-      "redirectTo": "/alert"
+      "icon": "american-football",
+      "name": "detalle-anuncio",
+      "redirectTo": "/detalle-anuncio"
     },
     {
       "icon": "beaker",
@@ -60,7 +60,7 @@
       "redirectTo": "/list"
     },
     {
-      "icon": "reorder",
+      "icon": "american-football",
       "name": "Listas - Reorder",
       "redirectTo": "/list-reorder"
     },
